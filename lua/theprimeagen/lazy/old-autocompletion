@@ -33,6 +33,7 @@ return { -- Autocompletion
         --  into multiple repos for maintenance purposes.
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-path',
+        'hrsh7th/cmp-nvim-lsp-signature-help',
     },
     config = function()
         -- See `:help cmp`
@@ -102,15 +103,37 @@ return { -- Autocompletion
 
                 -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
                 --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
+                --
             },
             sources = {
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-                { name = 'path' },
-                { name = 'buffer' },
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip' },
+                    { name = 'buffer' },
+                    { name = 'nvim_lsp_signature_help' },
+                },
+                -- {
+                --     { name = 'nvim_lsp_signature_help' },
+                -- },
+                -- {
+                --     { name = 'path' },
+                -- }
                 -- { name = 'vim-dadbob-completion'},
-            },
-        }
+            formatting = {
+                format = function(entry, vim_item)
+                    vim_item.menu = ({
+                        nvim_lsp = "[LSP]",
+                        spell = "[Spell]",
+                        buffer = "[Buffer]",
+                        path = "[Path]",
+                        nvim_lsp_signature_help = "[Signature]",
+                        treesitter = "[Treesiter]",
+                    })
+		    vim_item.kind = string.format("icon %s",  vim_item.kind)
+
+                    return vim_item
+                end
+            }
+         }
 
         -- custom snipet --
         for _, ft_path in ipairs(vim.api.nvim_get_runtime_file("lua/custom/snipets/*.lua", true)) do

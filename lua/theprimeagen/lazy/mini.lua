@@ -1,4 +1,5 @@
 return {
+  { 'onsails/lspkind-nvim' },
   -- Highlight todo, notes, etc in comments
   {
     'folke/todo-comments.nvim',
