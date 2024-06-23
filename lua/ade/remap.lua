@@ -21,10 +21,11 @@ end)
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[Y]ank into system main buffer" })
+vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "[Y]ank into system main buffer" })
 
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "[D] delete into void"})
+vim.keymap.set( {"v", "x"},  "<leader>p", [["_dp]], { desc = "[D]elete in virtual mode and [P]aste" })
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")

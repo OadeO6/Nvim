@@ -1,3 +1,5 @@
+-- using this only because javascript linters are
+-- being ignoerd in ale for some reason
 return {
     "mfussenegger/nvim-lint",
     event ={
@@ -8,12 +10,13 @@ return {
         local lint = require("lint");
 
         require 'lspconfig'.eslint.setup {}
+        -- require 'lspconfig'.pycodestyle.setup {}
         lint.linters_by_ft = {
             javascript = {"eslint"},
             javascriptreact = {"eslint"},
             typescript  = {"eslint"},
             typescriptreact  = {"eslint"},
-            python = {"pycodestyle"}
+            -- python = {"pycodestyle"}
         }
 
         local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -23,8 +26,8 @@ return {
                 lint.try_lint()
             end
         })
-        vim.keymap.set("n", "<leader>l", function ()
+        vim.keymap.set("n", "<leader>ll", function ()
             lint.try_lint()
-        end, { desc = "activate linting" })
+        end, { desc = "activate [L]inting" })
     end
 }
