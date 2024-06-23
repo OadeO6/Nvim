@@ -917,4 +917,4 @@ P.S. You can delete this when you're done too. It's your config now! :)
 --  })
 -- --
 -- The line beneath thisetis called `modeline`. See `:help modeline`
-require("theprimeagen")
+require("ade")
