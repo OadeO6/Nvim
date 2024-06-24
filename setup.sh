@@ -37,6 +37,18 @@ dependencies(){
     if ( which nvim 1> /dev/null )
     then
 	    echo "Nvim available"
+	    nvim_v=$(nvim --version | grep -oP '(?<=NVIM v)\K[0-9.]+')
+	    if [[ $nvim_v < 0.9.5 ]];
+	    then
+	    	echo "Updating nvim"
+		apt remove neovim
+
+		wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
+		tar xzf nvim-linux64.tar.gz
+		mv nvim-linux64 /usr/local/nvim
+		ln -s /usr/local/nvim/bin/nvim /usr/bin/nvim
+	    fi
+
     else
 	    echo "-- Installing nvim......"
 	    wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
