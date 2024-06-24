@@ -2,7 +2,10 @@ return {
     'VonHeikemen/lsp-zero.nvim',
     priority = 2000,
     dependencies = {
-        { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+	{
+		'williamboman/mason.nvim',
+		config = true,
+	},  -- NOTE: Must be loaded before dependants
         'williamboman/mason-lspconfig.nvim',
         'WhoIsSethDaniel/mason-tool-installer.nvim',
 
@@ -43,7 +46,14 @@ return {
     },
     config = function()
         local lsp = require("lsp-zero")
-
+	require 'mason-lspconfig'.setup({
+		ensure_installed = {
+			'pyright',
+			'tsserver', -- 'typescript-language-server'
+			'lua_ls', -- 'lua-language-server'
+			'tailwindcss', --'tailwindcss-language-server',
+		}
+	})
         require 'lspconfig'.tailwindcss.setup {}
         require 'lspconfig'.tsserver.setup {}
         require 'lspconfig'.html.setup {}
@@ -53,6 +63,19 @@ return {
         require 'lspconfig'.pyright.setup {}
         require 'lspconfig'.htmx.setup {}
         require 'lspconfig'.lua_ls.setup {}
+	require 'mason-lspconfig'.setup({
+            config = function ()
+                require('mason-lspconfig').setup({
+
+                    servers = {
+                        'typescript-language-server', --tsserver
+                        'pyright',
+                        'lua-language-server',
+                        'tailwindcss-language-server',
+                    }
+                })
+            end
+	})
 
 
         lsp.preset('recommended')
