@@ -12,6 +12,21 @@ require("ade.lazy_init")
 
 -- DO NOT INCLUDE THIS
 -- DO.not
+-- Go to last known cursor position when opening a file, except for gitcommit file type
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local ft = vim.bo.filetype
+    if ft ~= "gitcommit" then
+      local mark = vim.api.nvim_buf_get_mark(0, '"')
+      local lcount = vim.api.nvim_buf_line_count(0)
+      if mark[1] > 0 and mark[1] <= lcount then
+        pcall(vim.api.nvim_win_set_cursor, 0, mark)
+      end
+    end
+  end,
+})
+
+--
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})
