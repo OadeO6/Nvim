@@ -28,6 +28,7 @@ return {
             -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
             vim.cmd.colorscheme 'tokyonight-night'
             vim.keymap.set('n', ';uc', ':lua SwichColors()<CR>', { desc = "change color themes"})
+            vim.keymap.set('n', '<leader>tc', ':lua SwichColors()<CR>', { desc = "[T]oggle color themes"})
 
             -- You can configure highlights by doing something like:
             vim.cmd.hi 'Comment gui=none'

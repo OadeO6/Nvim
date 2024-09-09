@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -10,15 +10,15 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
-vim.keymap.set("n", "<leader>vwm", function()
+vim.keymap.set("n", "<leader>tv", function()
     require("vim-with-me").StartVimWithMe()
-end)
-vim.keymap.set("n", "<leader>svwm", function()
+end, { desc = "Start VimWithMe" })
+vim.keymap.set("n", "<leader>tV", function()
     require("vim-with-me").StopVimWithMe()
-end)
+end, { desc = "Stop VimWithMe" })
 
 -- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
+vim.keymap.set("n", "<leader>p", [["_ddP]], { desc = "[D]elete line and [P]aste" })
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "[Y]ank into system main buffer" })

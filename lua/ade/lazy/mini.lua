@@ -35,12 +35,17 @@ return {
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         [';'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
         ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
-        ['<leader>h'] = { name = 'Git [H]unk', _ = 'which_key_ignore' },
+        ['<leader>h'] = { name = '[H]arpoon', _ = 'which_key_ignore' },
         ['<leader>l'] = { name = '[L]int', _ = 'which_key_ignore' },
         [';u'] = { name = '[U]i', _ = 'which_key_ignore' },
         [';c'] = { name = '[C]ode', _ = 'which_key_ignore' },
         [';s'] = { name = '[S]ubstitution', _ = 'which_key_ignore' },
+        ['<leader>g'] = { name = '[G]oto', _ = 'which_key_ignore' },
+        ['<leader>v'] = { name = '[V]ariable/Symbol', _ = 'which_key_ignore' },
+        [';G'] = { name = '[G]it', _ = 'which_key_ignore' },
         [';g'] = { name = '[G]oto', _ = 'which_key_ignore' },
+        [']'] = { name = 'goto Next ] ...', _ = 'which_key_ignore' },
+        ['['] = { name = 'goto Previous [ ...', _ = 'which_key_ignore' },
       }
       -- visual mode
       require('which-key').register({
