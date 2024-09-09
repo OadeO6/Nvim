@@ -49,13 +49,13 @@ return {
 	require 'mason-lspconfig'.setup({
 		ensure_installed = {
 			'pyright',
-			'tsserver', -- 'typescript-language-server'
+			'ts_ls', -- 'typescript-language-server'
 			'lua_ls', -- 'lua-language-server'
 			'tailwindcss', --'tailwindcss-language-server',
 		}
 	})
         require 'lspconfig'.tailwindcss.setup {}
-        require 'lspconfig'.tsserver.setup {}
+        require 'lspconfig'.ts_ls.setup {}
         require 'lspconfig'.html.setup {}
         require 'lspconfig'.eslint.setup {}
         require 'lspconfig'.dockerls.setup {}
