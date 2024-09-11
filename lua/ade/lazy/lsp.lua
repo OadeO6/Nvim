@@ -234,6 +234,8 @@ return {
                 --  Similar to document symbols, except searches over your entire project.
                 map(';ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
                 map('<leader>vL', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[V]ariable/Symbol [L]ist global')
+                map('<leader>sv', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[S]earch [V]ariable/Symbol')
+                map('<leader>vR', require('telescope.builtin').lsp_references, '[V]ariable/Symbol [References]')
 
                 -- Rename the variable under your cursor.
                 --  Most Language Servers support renaming across files, etc.

@@ -5,12 +5,14 @@ return {
 local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
-
 vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "add curent file to harpoon list" })
-vim.keymap.set("n", "<leader>ha", mark.add_file, { desc = "add curent file to [H]arpoon list" })
+vim.keymap.set("n", "<leader>ha", mark.add_file, { desc = "[A]dd curent file to [H]arpoon list" })
+vim.keymap.set("n", "<leader>hr", mark.rm_file, { desc = "[R]emove curent file from [H]arpoon list" })
+vim.keymap.set("n", "<leader>hc", mark.clear_all, { desc = "[C]lear [H]arpoon list" })
 vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 vim.keymap.set("n", "<leader>hm", ui.toggle_quick_menu, { desc = "[H]arpoon quick menu"})
-vim.keymap.set("n", "<S-Tab>", function() ui.nav_next();ui.toggle_quick_menu()  end, { desc = "toggle between harpoon  list" })
+vim.keymap.set("n", "<S-Tab>", function() ui.nav_next();ui.toggle_quick_menu()end, { desc = "toggle between harpoon  list" })
+-- vim.keymap.set("n", "<C-i>", ui.nav_toggle_quick_menu, { desc = "toggle between harpoon  list" })
 
 vim.keymap.set("n", "<C-h>", function() ui.nav_file(1) end)
 vim.keymap.set("n", "<C-t>", function() ui.nav_file(2) end)
