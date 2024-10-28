@@ -17,6 +17,9 @@ vim.keymap.set("n", "<leader>tV", function()
     require("vim-with-me").StopVimWithMe()
 end, { desc = "Stop VimWithMe" })
 
+-- Dadbod(dadbod)  my database manager
+vim.keymap.set("n", "<leader>D", ":DBUIToggle<CR>", { desc = "[D]adbod Toggle" })
+
 -- greatest remap ever
 vim.keymap.set("n", "<leader>p", [["_ddP]], { desc = "[D]elete line and [P]aste" })
 
