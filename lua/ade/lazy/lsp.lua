@@ -49,9 +49,16 @@ return {
 	require 'mason-lspconfig'.setup({
 		ensure_installed = {
 			'pyright',
+			'black',
+			'flake8',
+			'isort',
+			'terraformls',
+			'tflint',
 			'ts_ls', -- 'typescript-language-server'
 			'lua_ls', -- 'lua-language-server'
 			'tailwindcss', --'tailwindcss-language-server',
+            'gopls',
+            'golangci-lint',
 		}
 	})
         require 'lspconfig'.tailwindcss.setup {}
@@ -63,6 +70,9 @@ return {
         require 'lspconfig'.pyright.setup {}
         require 'lspconfig'.htmx.setup {}
         require 'lspconfig'.lua_ls.setup {}
+        require 'lspconfig'.tflint.setup {}
+        require 'lspconfig'.terraformls.setup {}
+        require 'lspconfig'.gopls.setup {}
 	require 'mason-lspconfig'.setup({
             config = function ()
                 require('mason-lspconfig').setup({
@@ -70,8 +80,16 @@ return {
                     servers = {
                         'typescript-language-server', --tsserver
                         'pyright',
+                        'isort',
+                        'black',
+                        'flake8',
+                        'tflint',
+                        'terraform-ls',
+                        'terraformls',
                         'lua-language-server',
                         'tailwindcss-language-server',
+                        'gopls',
+                        'golangci-lint',
                     }
                 })
             end

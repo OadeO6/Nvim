@@ -13,14 +13,18 @@ return {
 
         -- Configure ALE linters and fixers
         vim.g.ale_linters = {
-            python = {'pycodestyle'},
+            python = {'pycodestyle', 'snyk', 'mypy', 'flake8'},
+            tf = {'tflint', 'snyk', 'terraform-ls'},
+            go = {'gopls', 'golangci-lint'},
             -- javascript = {'eslint'},  -- for some reason eslint  is being ignored
             --lua = {'luacheck'}
         }
 
         vim.g.ale_fixers = {
             ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
-            python = {'autopep8'},
+            python = {'autopep8', 'black', 'isort'},
+            tf = {'tflint'},
+            go = {'goimports', 'golines'},
             javascript = {'prettier'},
             --lua = {'luafmt'}
         }

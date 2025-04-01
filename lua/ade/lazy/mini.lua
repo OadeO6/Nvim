@@ -43,6 +43,7 @@ return {
         ['<leader>g'] = { name = '[G]oto', _ = 'which_key_ignore' },
         ['<leader>v'] = { name = '[V]ariable/Symbol', _ = 'which_key_ignore' },
         [';G'] = { name = '[G]it', _ = 'which_key_ignore' },
+        ['<leader>G'] = { name = '[G]it', _ = 'which_key_ignore' },
         [';g'] = { name = '[G]oto', _ = 'which_key_ignore' },
         [']'] = { name = 'goto Next ] ...', _ = 'which_key_ignore' },
         ['['] = { name = 'goto Previous [ ...', _ = 'which_key_ignore' },

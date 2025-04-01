@@ -20,6 +20,9 @@ end, { desc = "Stop VimWithMe" })
 -- Dadbod(dadbod)  my database manager
 vim.keymap.set("n", "<leader>D", ":DBUIToggle<CR>", { desc = "[D]adbod Toggle" })
 
+-- temporary marking
+vim.keymap.set("n", "<leader>'", "m'", { desc = "Mark this location with [']" })
+
 -- greatest remap ever
 vim.keymap.set("n", "<leader>p", [["_ddP]], { desc = "[D]elete line and [P]aste" })
 
