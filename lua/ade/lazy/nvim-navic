@@ -1,0 +1,9 @@
+--- USE: for func def at top of file lighter
+-- ~/.config/nvim/lua/plugins/nvim-navic.lua
+return {
+  "SmiteshP/nvim-navic",
+  dependencies = { "neovim/nvim-lspconfig" },
+  config = function()
+    -- No setup needed unless you want to customize icons
+  end,
+}

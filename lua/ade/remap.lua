@@ -1,6 +1,16 @@
 vim.g.mapleader = " "
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
+-- Custom mapper for file and folder creation
+-- create file in current file directory
+vim.keymap.set("n", "<leader>nf", ":vi %:h", { desc = "Create [n]ew [F]ile in current file directory" })
+vim.keymap.set("n", "<leader>nF", ":vi ", { desc = "Create [n]ew [F]ile in the root directory" })
+-- create folder in current file directory
+vim.keymap.set("n", "<leader>nd", "::!mkdir %:h", { desc = "Create [n]ew [D]irectory in current file directory" })
+vim.keymap.set("n", "<leader>nD", ":!mkdir ", { desc = "Create [n]ew [D]irectory in the root directory" })
+-- toggle treesiter-context
+vim.keymap.set("n", "<leader>tT", ':lua require("treesitter-context").toggle()<CR>', { desc = "[T]oggle [T]reesiter-context sticky func" })
+
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 

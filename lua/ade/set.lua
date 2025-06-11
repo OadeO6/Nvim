@@ -8,7 +8,7 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.api.nvim_create_autocmd("FileType",
     {
-        pattern = {"javascript", "js", "javascript.jsx", "htmldjango"},
+        pattern = {"javascript", "js", "javascript.jsx", "htmldjango", "typescript"},
         callback = function ()
             vim.opt.tabstop = 2
             vim.opt.softtabstop = 2

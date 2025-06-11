@@ -68,7 +68,7 @@ return {
         require 'lspconfig'.dockerls.setup {}
         require 'lspconfig'.docker_compose_language_service.setup {}
         require 'lspconfig'.pyright.setup {}
-        require 'lspconfig'.htmx.setup {}
+        -- require 'lspconfig'.htmx.setup {}
         require 'lspconfig'.lua_ls.setup {}
         require 'lspconfig'.tflint.setup {}
         require 'lspconfig'.terraformls.setup {}
@@ -100,6 +100,16 @@ return {
 
         lsp.on_attach(function(client, bufnr)
             lsp.default_keymaps({ buffer = bufnr })
+            -- -- NOTE:  uncomment if you want to use nvim-navic
+            -- -- Inside your on_attach function
+            -- local navic = require("nvim-navic")
+            -- if client.server_capabilities.documentSymbolProvider then
+            --     navic.attach(client, bufnr)
+            -- end
+            --
+            -- -- Use winbar to display current context
+            -- vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
         end)
 
         local cmp_autopairs = require('nvim-autopairs.completion.cmp')

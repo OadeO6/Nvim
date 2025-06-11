@@ -1,0 +1,19 @@
+--- USE: for func def at top of file
+return {
+  "utilyre/barbecue.nvim",
+  name = "barbecue",
+  version = "*",
+  dependencies = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional but recommended
+    "neovim/nvim-lspconfig"
+  },
+  config = function()
+    require("barbecue").setup({
+      -- optional config
+      theme = 'auto',  -- or 'tokyonight', 'catppuccin', etc.
+      show_modified = true,
+      attach_navic = true, -- auto-attach navic to LSP
+    })
+  end,
+}
